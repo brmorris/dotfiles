@@ -123,8 +123,8 @@
 
 ".local/bin/skopeo":
   type: file
-  {{ $skopeoVersion := includeTemplate "get-github-latest-version" "felipecrs/skopeo-bin" }}
-  url: "https://github.com/felipecrs/skopeo-bin/releases/download/v{{ $skopeoVersion }}/skopeo.linux-{{ .chezmoi.arch }}"
+  {{ $skopeoVersion := includeTemplate "get-github-latest-version" "brmorris/skopeo-bin" }}
+  url: "https://github.com/brmorris/skopeo-bin/releases/download/v{{ $skopeoVersion }}/skopeo.linux-{{ .chezmoi.arch }}"
   executable: true
 
 ".deno/bin/deno":
