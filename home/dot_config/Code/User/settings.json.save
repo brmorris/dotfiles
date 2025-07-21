@@ -1,0 +1,6 @@
+{
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "window.titleBarStyle": "custom"
+}

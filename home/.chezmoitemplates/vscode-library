@@ -2,6 +2,36 @@
 
 wanted_extensions=(
   ms-vscode-remote.vscode-remote-extensionpack
+
+  # Python development
+  ms-python.python
+  ms-python.pylint
+  ms-python.black-formatter
+
+  # AWS development (especially CDK)
+  amazonwebservices.aws-toolkit-vscode
+  amazonwebservices.amazon-q-vscode
+
+  # GitHub
+  github.copilot
+  github.vscode-pull-request-github
+  github.vscode-github-actions
+
+  # REST client (free Postman alternative)
+  humao.rest-client
+
+  # Add your additional extensions here
+  # Example extensions:
+  # ms-vscode.vscode-typescript-next
+  # esbenp.prettier-vscode
+  # ms-toolsai.jupyter
+  # ms-vscode.powershell
+)
+
+# Extensions to uninstall if found
+unwanted_extensions=(
+  # Add extension IDs here that you want to remove
+  # example.unwanted-extension
 )
 
 function is_vscode_extension_installed() {
@@ -20,6 +50,18 @@ function install_vscode_extensions() {
         log_task "Installing VS Code extension: ${extension}"
       fi
       c code --install-extension "${extension}"
+    fi
+  done
+
+  # Uninstall unwanted extensions
+  for extension in "${unwanted_extensions[@]}"; do
+    if is_vscode_extension_installed "${extension}"; then
+      if [[ -n "${FOR_WINDOWS:-}" ]]; then
+        log_task "Uninstalling VS Code extension on Windows: ${extension}"
+      else
+        log_task "Uninstalling VS Code extension: ${extension}"
+      fi
+      c code --uninstall-extension "${extension}"
     fi
   done
 }

@@ -1,0 +1,21 @@
+{
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "security.workspace.trust.untrustedFiles": "open",
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+    "window.titleBarStyle": "custom",
+    // Tabs & Indentation
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    // Whitespace
+    "editor.renderWhitespace": "all",
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true,
+    "editor.renderFinalNewline": "on",
+    // Formatting
+    "editor.formatOnSave": true,
+    // Optional: Make trailing whitespace more visible
+    "workbench.colorCustomizations": {
+        "editorWhitespace.foreground": "#ff000080"
+    }
+}

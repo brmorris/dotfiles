@@ -27,6 +27,9 @@ autoSetupRemote = true
 [init]
 defaultBranch = master
 
+[log]
+oneline = true
+
 [gitreview]
 remote = origin
 
@@ -37,6 +40,8 @@ path = ~/.config/gitalias/gitalias.txt
 caa = commit --amend --all
 caane = commit --amend --all --no-edit
 cob = checkout -b
+pb = "!f() { git push origin \"$@\"; };f"
+g-yolo = "!f() { git commit -am 'yolo edit' && git pb; };f"
 
 apply-gitignore = "!f() { \
   set -ex; \
