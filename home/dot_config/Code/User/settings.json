@@ -17,5 +17,41 @@
     // Optional: Make trailing whitespace more visible
     "workbench.colorCustomizations": {
         "editorWhitespace.foreground": "#ff000080"
-    }
+    },
+    "workbench.iconTheme": "vscode-icons",
+    "github.copilot.advanced": {
+
+    },
+    "mcp.servers": [
+        {
+            "name": "VS Code",
+            "command": "node",
+            "args": [
+                "${extensionPath:semanticworkbenchteam.mcp-server-vscode}/dist/main.js"
+            ],
+            "options": {
+                "cwd": "${extensionPath:semanticworkbenchteam.mcp-server-vscode}"
+            }
+        },
+        {
+            "name": "Local Memory Server",
+            "command": "node",
+            "args": [
+                "${env:HOME}/.local/share/mcp-servers/memory/dist/main.js"
+            ],
+            "options": {
+                "cwd": "${env:HOME}/.local/share/mcp-servers/memory"
+            }
+        },
+        {
+            "name": "GitHub MCP Server",
+            "command": "node",
+            "args": [
+                "${env:HOME}/.local/share/mcp-servers/github/dist/main.js"
+            ],
+            "options": {
+                "cwd": "${env:HOME}/.local/share/mcp-servers/github"
+            }
+        }
+    ]
 }
