@@ -41,7 +41,7 @@ caa = commit --amend --all
 caane = commit --amend --all --no-edit
 cob = checkout -b
 pb = "!f() { git push origin \"$@\"; };f"
-g-yolo = "!f() { git commit -am 'yolo edit' && git pb; };f"
+yolo = "!f() { git commit -am 'yolo edit' && git pb; };f"
 
 apply-gitignore = "!f() { \
   set -ex; \
