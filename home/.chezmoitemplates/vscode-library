@@ -1,4 +1,4 @@
-# shellcheck shell=bash
+q# shellcheck shell=bash
 
 wanted_extensions=(
   ms-vscode-remote.vscode-remote-extensionpack
@@ -19,6 +19,10 @@ wanted_extensions=(
 
   # REST client (free Postman alternative)
   humao.rest-client
+
+  # MCP
+  semanticworkbenchteam.mcp-server-vscode
+  zebradev.mcp-server-runner
 
   # Add your additional extensions here
   # Example extensions:

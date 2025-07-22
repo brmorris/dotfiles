@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# {{ template "scripts-library" }}
+# The following line is for ShellCheck to correctly identify the above include
+true || source ../.chezmoitemplates/scripts-library
+
+log_task "Setting up MCP Local Memory Server"
+
+# Destination directory
+DEST_DIR="${HOME}/.local/share/mcp-servers/memory"
+
+# Check if the directory already exists
+if [ -d "$DEST_DIR" ]; then
+    log_info "MCP Local Memory Server already exists at $DEST_DIR. Skipping setup."
+    exit 0
+fi
+
+# Create the directory
+log_info "Creating directory: $DEST_DIR"
+mkdir -p "$DEST_DIR"
+
+# Clone the repository
+log_info "Cloning repository into $DEST_DIR"
+git clone https://github.com/AutomataLab/memory-mcp-server.git "$DEST_DIR"
+
+# Navigate to the directory
+cd "$DEST_DIR"
+
+# Install dependencies
+log_info "Installing npm dependencies"
+npm install
+
+# Build the server
+log_info "Building the server"
+npm run build
+
+log_success "MCP Local Memory Server setup complete."
