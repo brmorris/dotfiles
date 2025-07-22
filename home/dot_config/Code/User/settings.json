@@ -35,23 +35,18 @@
         },
         {
             "name": "Local Memory Server",
-            "command": "node",
+            "command": "npx",
             "args": [
-                "${env:HOME}/.local/share/mcp-servers/memory/dist/main.js"
+                "@modelcontextprotocol/server-memory"
             ],
             "options": {
                 "cwd": "${env:HOME}/.local/share/mcp-servers/memory"
             }
         },
         {
-            "name": "GitHub MCP Server",
-            "command": "node",
-            "args": [
-                "${env:HOME}/.local/share/mcp-servers/github/dist/main.js"
-            ],
-            "options": {
-                "cwd": "${env:HOME}/.local/share/mcp-servers/github"
-            }
+            "name": "github",
+            "type": "http",
+            "url": "https://api.githubcopilot.com/mcp/"
         }
     ]
 }
