@@ -1,0 +1,60 @@
+{
+	"servers": {
+		"github": {
+			"url": "https://api.githubcopilot.com/mcp/"
+		},
+		"awslabs.aws-api-mcp-server": {
+			"command": "uvx",
+			"args": [
+				"awslabs.aws-api-mcp-server@latest"
+			],
+			"env": {
+				"AWS_REGION": "ap-southeast-2",
+				"AWS_API_MCP_PROFILE_NAME": "${input:awsProfile}",
+				"READ_OPERATIONS_ONLY": "true"
+			},
+			"disabled": false,
+			"autoApprove": []
+		},
+		"aws-knowledge-mcp-server": {
+			"url": "https://knowledge-mcp.global.api.aws"
+		},
+		"awslabs.cost-explorer-mcp-server": {
+			"command": "uvx",
+			"args": [
+				"awslabs.cost-explorer-mcp-server@latest"
+			],
+			"env": {
+				"FASTMCP_LOG_LEVEL": "ERROR",
+				"AWS_PROFILE": "${input:awsProfile}"
+			},
+			"disabled": false,
+			"autoApprove": []
+		},
+		"awslabs.cloudwatch-mcp-server": {
+			"autoApprove": [],
+			"disabled": false,
+			"command": "uvx",
+			"args": [
+				"awslabs.cloudwatch-mcp-server@latest"
+			],
+			"env": {
+				"AWS_PROFILE": "${input:awsProfile}",
+				"FASTMCP_LOG_LEVEL": "ERROR"
+			},
+			"transportType": "stdio"
+		}
+	},
+	"inputs": [
+		{
+			"id": "awsProfile",
+			"type": "pickString",
+			"description": "Select your AWS profile",
+			"options": [
+				"rptau-dataeng-prod",
+				"rptau-dataeng-test",
+				"rptau-formseng-prod"
+			]
+		}
+	]
+}
